@@ -39,7 +39,7 @@ pipeline {
         stage("Deploy"){
             steps{
                 sh "docker compose up -d"
-                echo "Deployed Successfully"
+                echo "Deployed Successfully!!!"
             }
         }
     }
