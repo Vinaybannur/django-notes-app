@@ -10,13 +10,11 @@ pipeline{
         stage("Clone Code"){
             steps{
                 git url: "https://github.com/Vinaybannur/django-notes-app.git", branch: "main"
-                echo "Code Clone done"
             }
         }
         stage("Build & Test"){
             steps{
                 sh "docker build -t notes-app-jenkins:latest ."
-                echo "Build done"
             }
         }
         stage("Push to DockerHub"){
@@ -38,7 +36,6 @@ pipeline{
         stage("Deploy"){
             steps{
                 sh "docker compose up -d"
-                echo "Deployed successfully"
             }
         }
     }
